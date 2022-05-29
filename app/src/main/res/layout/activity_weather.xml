@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="weatherModel"
+            type="com.openweather.ui.weather.viewmodel.WeatherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/styTxtTitle"
+            android:layout_marginTop="12dp"
+            android:text="@{weatherModel.cityName}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchOffline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:checked="true"
+            android:text="@string/live_api"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:text="@{weatherModel.day1}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+                <TextView
+                    android:text="@{weatherModel.day2}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+                <TextView
+                    android:text="@{weatherModel.day3}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+                <TextView
+                    android:text="@{weatherModel.day4}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+                <TextView
+                    android:text="@{weatherModel.day5}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+                <TextView
+                    android:text="@{weatherModel.day6}"
+                    style="@style/styTxtHeader" />
+
+                <com.github.islamkhsh.CardSliderViewPager
+                    android:id="@+id/viewPagerDay6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:auto_slide_time="-1"
+                    app:cardSlider_otherPagesWidth="15dp"
+                    app:cardSlider_pageMargin="12dp"
+                    app:cardSlider_smallScaleFactor="1" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/styProgressBar"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

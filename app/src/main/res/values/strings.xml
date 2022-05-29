@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OpenWeather</string>
+    <string name="live_api">Live API</string>
+    <string name="city">City:</string>
+    <string name="date">Date:</string>
+    <string name="time">Time:</string>
+    <string name="temperature">Temperature:</string>
+</resources>
