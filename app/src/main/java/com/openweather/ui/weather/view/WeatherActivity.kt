@@ -105,9 +105,16 @@ class WeatherActivity : BaseActivity() {
         binding.viewPagerDay1.adapter = WeatherViewPagerAdapter(day1List as ArrayList<WeatherRes.Weather>)
         binding.viewPagerDay2.adapter = WeatherViewPagerAdapter(day2List as ArrayList<WeatherRes.Weather>)
         binding.viewPagerDay3.adapter = WeatherViewPagerAdapter(day3List as ArrayList<WeatherRes.Weather>)
-        binding.viewPagerDay4.adapter = WeatherViewPagerAdapter(day4List as ArrayList<WeatherRes.Weather>)
-        binding.viewPagerDay5.adapter = WeatherViewPagerAdapter(day5List as ArrayList<WeatherRes.Weather>)
+        binding.viewPagerDay4.adapter = WeatherViewPagerAdapter(day4List as ArrayList<WeatherRes.Weather> )
+        binding.viewPagerDay5.adapter = WeatherViewPagerAdapter(day5List as ArrayList<WeatherRes.Weather> )
         binding.viewPagerDay6.adapter = WeatherViewPagerAdapter(day6List as ArrayList<WeatherRes.Weather>)
+
+        binding.viewPagerDay1.setCurrentItem(day1List.size-1)
+        binding.viewPagerDay2.setCurrentItem(day2List.size-1)
+        binding.viewPagerDay3.setCurrentItem(day3List.size-1)
+        binding.viewPagerDay4.setCurrentItem(day4List.size-1)
+        binding.viewPagerDay5.setCurrentItem(day5List.size-1)
+        binding.viewPagerDay6.setCurrentItem(day6List.size-1)
     }
 
 }

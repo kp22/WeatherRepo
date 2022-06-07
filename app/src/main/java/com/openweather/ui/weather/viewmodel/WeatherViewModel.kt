@@ -98,8 +98,10 @@ class WeatherViewModel(private val appRepository: AppRepository) : BaseViewModel
     }
 
     //get the filtered data by date
-    fun getDataByDay(list: List<WeatherRes.Weather>, day: Int): Any {
-        return list.filter { it.dtTxt.contains(getDate(day, list.get(0).dtTxt), true) }
+    fun getDataByDay(list: List<WeatherRes.Weather>, day: Int): List<WeatherRes.Weather> {
+        return list.filter {
+            it.dtTxt.contains(getDate(day, list.get(0).dtTxt), true)
+        }.reversed()
     }
 
     //read data from the Json file

@@ -20,9 +20,12 @@ class WeatherViewPagerAdapter(list: ArrayList<WeatherRes.Weather>) : CardSliderA
         val tvDate = view.findViewById<AppCompatTextView>(R.id.tvDate)
         val tvTime = view.findViewById<AppCompatTextView>(R.id.tvTime)
         val tvTemprature = view.findViewById<AppCompatTextView>(R.id.tvTemprature)
+        val tvWeather = view.findViewById<AppCompatTextView>(R.id.tvWeather)
         val imgUser = view.findViewById<AppCompatImageView>(R.id.imgWeatherIcon)
 
         item?.let {
+
+            tvWeather.setText(it.weather.get(0).main)
             tvDate.setText("${view.context.getString(R.string.date)} ${
                 getConvertedDate(it.dtTxt, FORMAT_YYYYMMDD_HHMMSS, FORMAT_DDMMMYYYY)
             }")

@@ -12,7 +12,7 @@ data class WeatherRes(
     data class Weather(@SerializedName("dt") val dt: Int, @SerializedName("dt_txt") val dtTxt: String,
         @SerializedName("main") val main: Main, @SerializedName("weather") val weather: List<Weather>) {
         data class Main(@SerializedName("temp") val temp: Double)
-        data class Weather(@SerializedName("icon") val icon: String)
+        data class Weather(@SerializedName("icon") val icon: String,@SerializedName("main") val main: String)
 
     }
 }
